@@ -32,7 +32,7 @@ class RegisterView(APIView):
                 )
             else:
                 return Response(
-                    {'error': 'すでに登録されているメールアドレスです'},
+                    {'error': '既に登録されているメールアドレスです'},
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
@@ -54,6 +54,7 @@ class UserView(APIView):
                 {'user': user.data},
                 status=status.HTTP_200_OK
             )
+
         except:
             return Response(
                 {'error': 'ユーザーの取得に問題が発生しました'},
